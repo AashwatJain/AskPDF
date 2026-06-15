@@ -54,7 +54,7 @@ export default function Sidebar({ selectedDocument, onSelectDocument }) {
             <span style={{ color: 'white', fontWeight: 'bold', fontSize: '18px' }}>N</span>
           </div>
           <h1 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
-            NotebookLLM
+            AskPDF
           </h1>
         </div>
         <button 

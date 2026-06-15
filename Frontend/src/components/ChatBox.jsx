@@ -137,7 +137,7 @@ export default function ChatBox({ document }) {
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', alignItems: msg.role === 'user' ? 'flex-end' : 'flex-start' }}>
                 <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginLeft: msg.role === 'user' ? 0 : '12px', marginRight: msg.role === 'user' ? '12px' : 0 }}>
-                  {msg.role === 'user' ? 'You' : 'NotebookLLM'}
+                  {msg.role === 'user' ? 'You' : 'AskPDF'}
                 </span>
                 <div style={{
                   background: msg.role === 'user' ? 'var(--accent-gradient)' : 'var(--bg-card)',
@@ -211,7 +211,7 @@ export default function ChatBox({ document }) {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={`Ask NotebookLLM about '${document.originalName}'...`}
+            placeholder={`Ask AskPDF about '${document.originalName}'...`}
             disabled={isLoading}
             style={{
               flex: 1,
