@@ -13,3 +13,4 @@ export const RATE_LIMIT_MAX = 20;        // requests per window
 export const RATE_LIMIT_WINDOW = 60;     // window in seconds
 export const MAX_FILE_SIZE = 20 * 1024 * 1024; // 20MB
 export const MAX_PAGES = 200;            // max pages per PDF
+export const MAX_REQUESTS = 25; 

@@ -25,9 +25,26 @@ export const buildPrompt = (question, chunks, history = []) => {
 };
 
 export const streamAnswer = async (promptData) => {
+
+  let finalContents = [];
+
+  for (let i = 0; i < promptData.history.length; i++) {
+    let oldMessage = promptData.history[i];
+    
+    finalContents.push({
+      role: oldMessage.role,
+      parts: [ { text: oldMessage.content } ]
+    });
+  }
+
+  finalContents.push({
+    role: "user",
+    parts: [ { text: promptData.userMessage } ]
+  });
+
   const stream = await ai.models.generateContentStream({
     model: CHAT_MODEL,
-    contents: [...promptData.history, promptData.userMessage],
+    contents: finalContents,
     config: {
       systemInstruction: promptData.systemInstruction,
       temperature: 0.3,
